@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Café Raíz — Proyecto de concepto por NodoWeb</title>
+<meta name="description" content="Proyecto de concepto: sitio de una página para una cafetería de barrio en Bello, Antioquia.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F6EFE4;
+    --paper-dim: #EAE0CF;
+    --ink: #3A2A1F;
+    --ink-soft: #5C4735;
+    --terracotta: #A65733;
+    --gold: #D9A441;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Work Sans", sans-serif;
+    line-height: 1.6;
+  }
+  h1, h2, h3 { font-family: "Fraunces", serif; margin: 0; }
+  a { color: inherit; }
+
+  .banner {
+    background: var(--ink);
+    color: var(--paper);
+    text-align: center;
+    font-size: 13px;
+    padding: 10px 16px;
+    letter-spacing: 0.02em;
+  }
+  .banner a { color: var(--gold); text-decoration: underline; }
+
+  .wrap { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+  header.hero {
+    padding: 90px 0 70px;
+    text-align: center;
+    border-bottom: 1px solid var(--paper-dim);
+  }
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+  h1 { font-size: 46px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 16px; }
+  .hero p { font-size: 18px; color: var(--ink-soft); max-width: 480px; margin: 0 auto 32px; }
+  .badge-row { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+  .badge {
+    background: var(--paper-dim);
+    border-radius: 999px;
+    padding: 8px 18px;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+
+  section { padding: 64px 0; }
+  section + section { border-top: 1px solid var(--paper-dim); }
+  .section-head { text-align: center; margin-bottom: 44px; }
+  .section-head h2 { font-size: 30px; font-weight: 600; }
+
+  .menu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px 48px; }
+  .menu-item { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; border-bottom: 1px dotted var(--paper-dim); padding-bottom: 14px; }
+  .menu-item h3 { font-size: 19px; font-weight: 500; }
+  .menu-item p { font-size: 14px; color: var(--ink-soft); margin: 4px 0 0; }
+  .menu-item .price { font-family: "Fraunces", serif; font-size: 18px; color: var(--terracotta); white-space: nowrap; }
+
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .info-card h3 { font-size: 15px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--terracotta); font-weight: 600; margin-bottom: 10px; }
+  .info-card p { color: var(--ink-soft); margin: 0; }
+
+  .cta { text-align: center; }
+  .btn {
+    display: inline-block;
+    background: var(--terracotta);
+    color: var(--paper);
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  footer { text-align: center; padding: 40px 0; color: var(--ink-soft); font-size: 13px; }
+
+  @media (max-width: 640px) {
+    h1 { font-size: 32px; }
+    .menu-grid, .info-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="banner">
+  Proyecto de concepto diseñado por <strong>NodoWeb</strong> — no es un negocio real. <a href="../index.html">Volver a NodoWeb ↗</a>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Barrio Niquía · Bello, Antioquia</p>
+    <h1>Café Raíz</h1>
+    <p>Café de origen antioqueño, tostado cerca de ti. Un espacio pequeño para empezar el día con calma.</p>
+    <div class="badge-row">
+      <span class="badge">Lun–Sáb · 7:00 a.m. – 6:00 p.m.</span>
+      <span class="badge">Carrera 50 #34–12</span>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Del menú</h2>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div>
+          <h3>Tinto de la casa</h3>
+          <p>Café filtrado, tueste medio</p>
+        </div>
+        <span class="price">$3.500</span>
+      </div>
+      <div class="menu-item">
+        <div>
+          <h3>Café con leche</h3>
+          <p>Con leche entera o de avena</p>
+        </div>
+        <span class="price">$6.000</span>
+      </div>
+      <div class="menu-item">
+        <div>
+          <h3>Torta de la casa</h3>
+          <p>Cambia cada semana</p>
+        </div>
+        <span class="price">$5.500</span>
+      </div>
+      <div class="menu-item">
+        <div>
+          <h3>Almojábana</h3>
+          <p>Horneada cada mañana</p>
+        </div>
+        <span class="price">$3.000</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ubicacion">
+  <div class="wrap info-grid">
+    <div class="info-card">
+      <h3>Ubicación</h3>
+      <p>Carrera 50 #34–12, Barrio Niquía, Bello, Antioquia. A dos cuadras del parque principal.</p>
+    </div>
+    <div class="info-card">
+      <h3>Horario</h3>
+      <p>Lunes a sábado, 7:00 a.m. a 6:00 p.m. Domingos cerrado.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2 style="margin-bottom:16px;">¿Nos visitas esta semana?</h2>
+    <a href="#ubicacion" class="btn">Ver ubicación</a>
+  </div>
+</section>
+
+<footer>
+  Café Raíz es un negocio ficticio creado como proyecto de concepto por NodoWeb.
+</footer>
+
+</body>
+</html>

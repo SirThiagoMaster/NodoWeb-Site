@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ferretería Central — Proyecto de concepto por NodoWeb</title>
+<meta name="description" content="Proyecto de concepto: sitio y automatización de pedidos por WhatsApp para una ferretería de barrio en Medellín.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #E7ECEE;
+    --paper-dim: #D3DBDF;
+    --ink: #1C2B36;
+    --ink-soft: #43586A;
+    --signal: #296F9B;
+    --caution: #F0B429;
+    --caution-ink: #4A3A05;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Work Sans", sans-serif;
+    line-height: 1.6;
+  }
+  h1, h2, h3 { font-family: "Archivo", sans-serif; margin: 0; text-transform: uppercase; }
+  a { color: inherit; }
+
+  .banner {
+    background: var(--ink);
+    color: var(--paper);
+    text-align: center;
+    font-size: 13px;
+    padding: 10px 16px;
+  }
+  .banner a { color: var(--caution); text-decoration: underline; }
+
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+  header.hero {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 80px 0 64px;
+  }
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    color: var(--caution);
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  h1 { font-size: 44px; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 14px; }
+  .hero p { font-size: 17px; color: #B9C6CE; max-width: 460px; margin: 0 0 28px; }
+  .badge-row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .badge {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 6px;
+    padding: 7px 16px;
+    font-size: 13px;
+  }
+
+  section { padding: 64px 0; }
+  section + section { border-top: 1px solid var(--paper-dim); }
+  .section-head { margin-bottom: 36px; }
+  .section-head h2 { font-size: 26px; font-weight: 800; }
+  .section-head .eyebrow { color: var(--signal); }
+
+  .cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .cat-card {
+    background: white;
+    border: 1px solid var(--paper-dim);
+    border-radius: 8px;
+    padding: 22px 18px;
+  }
+  .cat-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+  .cat-card p { font-size: 13px; color: var(--ink-soft); margin: 0; text-transform: none; font-family: "Work Sans", sans-serif; }
+
+  .demo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .demo-copy h2 { font-size: 26px; margin-bottom: 14px; }
+  .demo-copy p { color: var(--ink-soft); margin-bottom: 0; }
+
+  .phone {
+    background: white;
+    border: 1px solid var(--paper-dim);
+    border-radius: 16px;
+    padding: 18px;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+  .phone-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--paper-dim);
+    margin-bottom: 14px;
+  }
+  .phone-head .dot { width: 34px; height: 34px; border-radius: 50%; background: var(--signal); color: white; display: flex; align-items: center; justify-content: center; font-family: "Archivo", sans-serif; font-weight: 700; font-size: 13px; }
+  .phone-head strong { font-size: 14px; text-transform: none; font-family: "Work Sans", sans-serif; }
+  .phone-head span { font-size: 11px; color: var(--ink-soft); display: block; }
+
+  .bubble { max-width: 82%; padding: 10px 14px; border-radius: 12px; font-size: 13.5px; margin-bottom: 10px; }
+  .bubble.user { background: var(--paper); margin-left: auto; border-bottom-right-radius: 3px; }
+  .bubble.bot { background: #EAF3F8; border: 1px solid #CFE3ED; border-bottom-left-radius: 3px; }
+  .bubble.bot .tag { display:block; font-size: 10px; color: var(--signal); font-weight: 600; margin-bottom: 3px; text-transform: uppercase; letter-spacing: .04em; }
+
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .info-card h3 { font-size: 14px; color: var(--signal); font-weight: 700; margin-bottom: 8px; }
+  .info-card p { color: var(--ink-soft); margin: 0; text-transform: none; font-family: "Work Sans", sans-serif; }
+
+  footer { text-align: center; padding: 36px 0; color: var(--ink-soft); font-size: 13px; }
+
+  @media (max-width: 720px) {
+    h1 { font-size: 32px; }
+    .cat-grid { grid-template-columns: repeat(2, 1fr); }
+    .demo-grid, .info-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="banner">
+  Proyecto de concepto diseñado por <strong>NodoWeb</strong> — no es un negocio real. <a href="../index.html">Volver a NodoWeb ↗</a>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Ferretería de barrio · Medellín</p>
+    <h1>Ferretería Central</h1>
+    <p style="text-transform:none;">Todo para tu obra, a una cuadra de tu casa. Herramientas, pintura, plomería y eléctricos.</p>
+    <div class="badge-row">
+      <span class="badge">Lun–Sáb · 7:30 a.m. – 7:00 p.m.</span>
+      <span class="badge">Domingos · 8:00 a.m. – 1:00 p.m.</span>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Categorías</p>
+      <h2>Lo que vas a encontrar</h2>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card"><h3>Herramientas</h3><p>Manuales y eléctricas</p></div>
+      <div class="cat-card"><h3>Pintura</h3><p>Interior, exterior y acabados</p></div>
+      <div class="cat-card"><h3>Plomería</h3><p>Tubería, llaves y accesorios</p></div>
+      <div class="cat-card"><h3>Eléctricos</h3><p>Cableado, bombillos, tomas</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap demo-grid">
+    <div class="demo-copy">
+      <p class="eyebrow">Automatización · NodoWeb</p>
+      <h2>Pedidos por WhatsApp, sin que nadie esté pendiente del chat</h2>
+      <p>Este es el tipo de automatización que NodoWeb integra: el cliente pregunta, el sistema responde con precio y disponibilidad al instante, y separa el pedido — todo antes de que alguien del negocio tenga que escribir una palabra.</p>
+    </div>
+    <div class="phone">
+      <div class="phone-head">
+        <div class="dot">FC</div>
+        <div>
+          <strong>Ferretería Central</strong>
+          <span>Respuesta automática</span>
+        </div>
+      </div>
+      <div class="bubble user">Hola, ¿tienen cinta aislante?</div>
+      <div class="bubble bot"><span class="tag">Automático</span>¡Hola! Sí, tenemos cinta aislante 3M a $4.500. ¿Te la separamos para recoger hoy?</div>
+      <div class="bubble user">Sí porfa</div>
+      <div class="bubble bot"><span class="tag">Automático</span>Listo ✅ Pedido #482 apartado. Puedes recogerlo hasta las 7:00 p.m.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap info-grid">
+    <div class="info-card">
+      <h3>Ubicación</h3>
+      <p>Calle 45 #62–08, Medellín. Frente al polideportivo del barrio.</p>
+    </div>
+    <div class="info-card">
+      <h3>Contacto</h3>
+      <p>Pedidos y consultas por WhatsApp — respuesta automática fuera de horario, atención directa en horario de local.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Ferretería Central es un negocio ficticio creado como proyecto de concepto por NodoWeb.
+</footer>
+
+</body>
+</html>

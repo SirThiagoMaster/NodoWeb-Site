@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NodoWeb — Sitios web y automatización para pymes en Medellín</title>
+<meta name="description" content="NodoWeb: sitios web y automatización con Python para pequeños negocios de Medellín y Bello. Dos personas, un mismo equipo, sin intermediarios.">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nodoweb.co/">
+<meta property="og:site_name" content="NodoWeb">
+<meta property="og:title" content="NodoWeb — Sitios web y automatización para pymes en Medellín">
+<meta property="og:description" content="El nodo entre tu negocio y lo digital. Sitios web y automatización para pequeños negocios de Medellín y Bello.">
+<meta property="og:image" content="https://nodoweb.co/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_CO">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NodoWeb — Sitios web y automatización para pymes en Medellín">
+<meta name="twitter:description" content="El nodo entre tu negocio y lo digital. Sitios web y automatización para pequeños negocios de Medellín y Bello.">
+<meta name="twitter:image" content="https://nodoweb.co/og-image.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
+<link rel="stylesheet" href="dist/output.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "NodoWeb",
+  "description": "Sitios web y automatización con Python para pequeños negocios de Medellín y Bello, Antioquia.",
+  "url": "https://nodoweb.co/",
+  "telephone": "+57 300 2568908",
+  "email": "thiagorestrepo93@gmail.com",
+  "areaServed": [
+    { "@type": "City", "name": "Medellín" },
+    { "@type": "City", "name": "Bello" }
+  ],
+  "priceRange": "$300.000 - $1.800.000 COP"
+}
+</script>
+</head>
+
+<body class="font-body text-ink antialiased">
+
+<a href="#top" class="sr-only-focusable">Saltar al contenido</a>
+
+<!-- NAV -->
+<header class="fixed top-0 inset-x-0 z-50 backdrop-blur bg-paper/85 border-b border-paperDim">
+  <div class="max-w-6xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
+    <a href="#top" class="font-display font-700 text-lg tracking-tight flex items-center gap-2">
+      <span class="w-2.5 h-2.5 rounded-full bg-signal"></span>
+      NodoWeb
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+      <a href="#servicios" class="hover:text-signalText transition-colors">Servicios</a>
+      <a href="#cotizador" class="hover:text-signalText transition-colors">Cotizador</a>
+      <a href="#proyectos" class="hover:text-signalText transition-colors">Proyectos</a>
+      <a href="#proceso" class="hover:text-signalText transition-colors">Cómo trabajamos</a>
+      <a href="#nosotros" class="hover:text-signalText transition-colors">Nosotros</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="#contacto" class="hidden sm:inline-block text-sm font-semibold bg-ink text-paper px-4 py-2 rounded-full hover:bg-inkSoft transition-colors">
+        Escríbenos
+      </a>
+      <button id="menu-toggle" type="button" class="md:hidden w-10 h-10 flex items-center justify-center rounded-full border border-paperDim" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
+        <svg id="menu-icon-open" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 5H17M3 10H17M3 15H17" stroke="#16262A" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <svg id="menu-icon-close" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true" class="hidden"><path d="M4 4L16 16M16 4L4 16" stroke="#16262A" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav id="mobile-menu" class="md:hidden hidden border-t border-paperDim bg-paper px-6 py-4 flex flex-col gap-1 text-sm font-medium">
+    <a href="#servicios" class="py-2.5">Servicios</a>
+    <a href="#cotizador" class="py-2.5">Cotizador</a>
+    <a href="#proyectos" class="py-2.5">Proyectos</a>
+    <a href="#proceso" class="py-2.5">Cómo trabajamos</a>
+    <a href="#nosotros" class="py-2.5">Nosotros</a>
+    <a href="#contacto" class="py-2.5 text-signalText">Contacto</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="top" class="pt-40 pb-24 px-6 md:px-10" tabindex="-1">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+    <div>
+      <p class="eyebrow text-xs text-signalText mb-5">ESTUDIO WEB · MEDELLÍN Y BELLO</p>
+      <h1 class="font-display font-700 text-4xl md:text-5xl leading-[1.08] tracking-tight mb-6">
+        El nodo entre tu negocio y lo digital.
+      </h1>
+      <p class="text-lg text-inkSoft max-w-md mb-8 leading-relaxed">
+        Sitios web y automatización para pequeños negocios de Medellín y Bello.
+        Sin letra pequeña, sin tercerizar tu proyecto — el mismo equipo que cotiza es el que construye y te da soporte.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#servicios" class="bg-ink text-paper px-6 py-3 rounded-full font-semibold text-sm hover:bg-inkSoft transition-colors">
+          Ver servicios
+        </a>
+        <a href="#contacto" class="border border-ink px-6 py-3 rounded-full font-semibold text-sm hover:border-signal hover:text-signalText transition-colors">
+          Escríbenos por WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- Node diagram -->
+    <div class="relative flex items-center justify-center">
+      <svg viewBox="0 0 500 500" class="w-full max-w-sm md:max-w-md" aria-hidden="true">
+        <line x1="250" y1="250" x2="250" y2="80"  stroke="#3AA6A0" stroke-width="2" class="line-draw" />
+        <line x1="250" y1="250" x2="420" y2="250" stroke="#3AA6A0" stroke-width="2" class="line-draw" style="animation-delay:.15s" />
+        <line x1="250" y1="250" x2="250" y2="420" stroke="#3AA6A0" stroke-width="2" class="line-draw" style="animation-delay:.3s" />
+        <line x1="250" y1="250" x2="80"  y2="250" stroke="#3AA6A0" stroke-width="2" class="line-draw" style="animation-delay:.45s" />
+
+        <circle class="pulse p-top"    cx="250" cy="250" r="5" fill="#E8A33D" />
+        <circle class="pulse p-right"  cx="250" cy="250" r="5" fill="#E8A33D" />
+        <circle class="pulse p-bottom" cx="250" cy="250" r="5" fill="#E8A33D" />
+        <circle class="pulse p-left"   cx="250" cy="250" r="5" fill="#E8A33D" />
+
+        <circle cx="250" cy="80"  r="30" fill="#ECEEE7" stroke="#16262A" stroke-width="1.5"/>
+        <circle cx="420" cy="250" r="30" fill="#ECEEE7" stroke="#16262A" stroke-width="1.5"/>
+        <circle cx="250" cy="420" r="30" fill="#ECEEE7" stroke="#16262A" stroke-width="1.5"/>
+        <circle cx="80"  cy="250" r="30" fill="#ECEEE7" stroke="#16262A" stroke-width="1.5"/>
+
+        <text x="250" y="76"  text-anchor="middle" dominant-baseline="middle" font-family="JetBrains Mono" font-size="10" fill="#16262A">Sitio web</text>
+        <text x="420" y="246" text-anchor="middle" dominant-baseline="middle" font-family="JetBrains Mono" font-size="10" fill="#16262A">Automat.</text>
+        <text x="250" y="416" text-anchor="middle" dominant-baseline="middle" font-family="JetBrains Mono" font-size="10" fill="#16262A">WhatsApp</text>
+        <text x="80"  y="246" text-anchor="middle" dominant-baseline="middle" font-family="JetBrains Mono" font-size="10" fill="#16262A">Reportes</text>
+
+        <circle cx="250" cy="250" r="44" fill="#16262A"/>
+        <text x="250" y="245" text-anchor="middle" dominant-baseline="middle" font-family="Space Grotesk" font-weight="600" font-size="11" fill="#ECEEE7">TU</text>
+        <text x="250" y="259" text-anchor="middle" dominant-baseline="middle" font-family="Space Grotesk" font-weight="600" font-size="11" fill="#ECEEE7">NEGOCIO</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- BARRA DE CONFIANZA -->
+<div class="border-y border-paperDim bg-paper">
+  <div class="max-w-6xl mx-auto px-6 md:px-10 py-4 flex flex-wrap justify-center gap-x-10 gap-y-2 text-xs font-medium text-inkSoft">
+    <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-signal"></span>Respuesta en 48 horas</span>
+    <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-signal"></span>30 días de soporte incluido</span>
+    <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-signal"></span>Precios claros en pesos colombianos</span>
+  </div>
+</div>
+
+<!-- SERVICIOS -->
+<section id="servicios" class="py-24 px-6 md:px-10 bg-white/40">
+  <div class="max-w-6xl mx-auto">
+    <p class="eyebrow text-xs text-signalText mb-4 reveal">SERVICIOS</p>
+    <h2 class="font-display font-700 text-3xl md:text-4xl tracking-tight mb-14 max-w-xl reveal">
+      Cuatro nodos, un mismo equipo.
+    </h2>
+
+    <div class="grid sm:grid-cols-2 gap-5">
+      <div class="card-node rounded-2xl p-7 bg-paper reveal">
+        <p class="eyebrow text-xs text-amberText mb-3">NODO 01</p>
+        <h3 class="font-display font-600 text-xl mb-2">Sitio web</h3>
+        <p class="text-inkSoft text-sm leading-relaxed">Sitios informativos, catálogos o landing pages, listos en días. Rápidos de cargar y pensados primero para celular.</p>
+      </div>
+      <div class="card-node rounded-2xl p-7 bg-paper reveal">
+        <p class="eyebrow text-xs text-amberText mb-3">NODO 02</p>
+        <h3 class="font-display font-600 text-xl mb-2">Automatización</h3>
+        <p class="text-inkSoft text-sm leading-relaxed">Reportes, facturas e inventario que hoy haces a mano, funcionando solos con scripts hechos a la medida.</p>
+      </div>
+      <div class="card-node rounded-2xl p-7 bg-paper reveal">
+        <p class="eyebrow text-xs text-amberText mb-3">NODO 03</p>
+        <h3 class="font-display font-600 text-xl mb-2">WhatsApp Business</h3>
+        <p class="text-inkSoft text-sm leading-relaxed">Respuestas automáticas, catálogo y pedidos organizados directamente desde WhatsApp.</p>
+      </div>
+      <div class="card-node rounded-2xl p-7 bg-paper reveal">
+        <p class="eyebrow text-xs text-amberText mb-3">NODO 04</p>
+        <h3 class="font-display font-600 text-xl mb-2">Mantenimiento</h3>
+        <p class="text-inkSoft text-sm leading-relaxed">Soporte y actualizaciones después de la entrega. Tu sitio no se queda solo ni tú tampoco.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COTIZADOR -->
+<section id="cotizador" class="py-24 px-6 md:px-10 bg-white/40">
+  <div class="max-w-4xl mx-auto">
+    <p class="eyebrow text-xs text-signalText mb-4 reveal">CALCULA TU PROYECTO</p>
+    <h2 class="font-display font-700 text-3xl md:text-4xl tracking-tight mb-4 max-w-xl reveal">
+      ¿Cuánto costaría tu proyecto?
+    </h2>
+    <p class="text-inkSoft max-w-2xl mb-12 reveal">
+      Marca lo que necesitas y te damos un estimado al momento — sin tener que escribir primero para saberlo. El precio final se confirma en la cotización real, pero esto te da una idea clara desde ya.
+    </p>
+
+    <div class="card-node rounded-2xl bg-paper p-6 md:p-10 reveal">
+      <div class="grid md:grid-cols-2 gap-10">
+
+        <div>
+          <p class="font-display font-600 text-sm mb-4">1. ¿Qué necesitas?</p>
+          <label class="flex items-start gap-3 mb-3 cursor-pointer">
+            <input type="checkbox" id="opt-web" class="mt-1 accent-signal" checked>
+            <span class="text-sm text-inkSoft"><strong class="text-ink font-medium">Sitio web</strong> — página informativa, catálogo o landing</span>
+          </label>
+          <label class="flex items-start gap-3 mb-6 cursor-pointer">
+            <input type="checkbox" id="opt-auto" class="mt-1 accent-signal">
+            <span class="text-sm text-inkSoft"><strong class="text-ink font-medium">Automatización</strong> — reportes, WhatsApp, procesos manuales</span>
+          </label>
+
+          <div id="web-options">
+            <p class="font-display font-600 text-sm mb-3">2. Tamaño del sitio</p>
+            <label class="flex items-center gap-3 mb-2 cursor-pointer text-sm text-inkSoft">
+              <input type="radio" name="web-size" value="basico" checked class="accent-signal"> Básico — 1 página
+            </label>
+            <label class="flex items-center gap-3 mb-2 cursor-pointer text-sm text-inkSoft">
+              <input type="radio" name="web-size" value="intermedio" class="accent-signal"> Intermedio — 3 a 5 secciones
+            </label>
+            <label class="flex items-center gap-3 mb-2 cursor-pointer text-sm text-inkSoft">
+              <input type="radio" name="web-size" value="catalogo" class="accent-signal"> Catálogo o tienda — 6+ secciones
+            </label>
+          </div>
+
+          <div id="auto-options" class="mt-6 hidden">
+            <p class="font-display font-600 text-sm mb-3">3. Tipo de automatización</p>
+            <label class="flex items-center gap-3 mb-2 cursor-pointer text-sm text-inkSoft">
+              <input type="radio" name="auto-type" value="simple" checked class="accent-signal"> Un proceso simple — un reporte o tarea
+            </label>
+            <label class="flex items-center gap-3 mb-2 cursor-pointer text-sm text-inkSoft">
+              <input type="radio" name="auto-type" value="whatsapp" class="accent-signal"> WhatsApp Business — catálogo y respuestas
+            </label>
+            <label class="flex items-center gap-3 mb-2 cursor-pointer text-sm text-inkSoft">
+              <input type="radio" name="auto-type" value="completo" class="accent-signal"> Ambos combinados
+            </label>
+          </div>
+        </div>
+
+        <div class="flex flex-col justify-between">
+          <div>
+            <p class="eyebrow text-xs text-inkSoft mb-2">ESTIMADO</p>
+            <p id="estimate-range" class="font-display font-700 text-3xl md:text-4xl text-ink mb-1">$500.000 – $800.000</p>
+            <p class="text-inkSoft text-xs mb-8">Precio final confirmado en la cotización — sin compromiso.</p>
+          </div>
+          <a id="whatsapp-quote-link" href="#" target="_blank" rel="noopener" class="bg-signal text-white text-center px-6 py-3 rounded-full font-semibold text-sm hover:opacity-90 transition-opacity">
+            Enviar esto por WhatsApp
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    const PRICES = {
+      web: {
+        basico:    { min: 500000,  max: 800000,  label: 'Sitio básico (1 página)' },
+        intermedio:{ min: 800000,  max: 1200000, label: 'Sitio intermedio (3-5 secciones)' },
+        catalogo:  { min: 1200000, max: 1800000, label: 'Sitio catálogo o tienda (6+ secciones)' },
+      },
+      auto: {
+        simple:   { min: 300000, max: 500000, label: 'Automatización simple' },
+        whatsapp: { min: 500000, max: 700000, label: 'Automatización de WhatsApp Business' },
+        completo: { min: 700000, max: 1000000, label: 'Automatización completa (reportes + WhatsApp)' },
+      },
+    };
+
+    const optWeb = document.getElementById('opt-web');
+    const optAuto = document.getElementById('opt-auto');
+    const webOptions = document.getElementById('web-options');
+    const autoOptions = document.getElementById('auto-options');
+    const rangeEl = document.getElementById('estimate-range');
+    const waLink = document.getElementById('whatsapp-quote-link');
+
+    function fmt(n) {
+      return '$' + n.toLocaleString('es-CO');
+    }
+
+    function update() {
+      webOptions.classList.toggle('hidden', !optWeb.checked);
+      autoOptions.classList.toggle('hidden', !optAuto.checked);
+
+      let min = 0, max = 0;
+      const chosen = [];
+
+      if (optWeb.checked) {
+        const size = document.querySelector('input[name="web-size"]:checked').value;
+        min += PRICES.web[size].min;
+        max += PRICES.web[size].max;
+        chosen.push(PRICES.web[size].label);
+      }
+      if (optAuto.checked) {
+        const type = document.querySelector('input[name="auto-type"]:checked').value;
+        min += PRICES.auto[type].min;
+        max += PRICES.auto[type].max;
+        chosen.push(PRICES.auto[type].label);
+      }
+
+      if (!optWeb.checked && !optAuto.checked) {
+        rangeEl.textContent = 'Marca al menos una opción';
+        waLink.href = '#';
+        return;
+      }
+
+      rangeEl.textContent = fmt(min) + ' – ' + fmt(max);
+
+      const msg = 'Hola, hablé con la calculadora de NodoWeb y me interesa: '
+        + chosen.join(' + ')
+        + '. Estimado: ' + fmt(min) + ' – ' + fmt(max) + '. ¿Hablamos?';
+      waLink.href = 'https://wa.me/573002568908?text=' + encodeURIComponent(msg);
+    }
+
+    [optWeb, optAuto].forEach((el) => el.addEventListener('change', update));
+    document.querySelectorAll('input[name="web-size"], input[name="auto-type"]').forEach((el) =>
+      el.addEventListener('change', update)
+    );
+
+    update();
+  })();
+</script>
+
+<!-- PROCESO -->
+<section id="proceso" class="py-24 px-6 md:px-10">
+  <div class="max-w-6xl mx-auto">
+    <p class="eyebrow text-xs text-signalText mb-4 reveal">CÓMO TRABAJAMOS</p>
+    <h2 class="font-display font-700 text-3xl md:text-4xl tracking-tight mb-14 max-w-xl reveal">
+      De la idea al sitio en línea, en cuatro pasos.
+    </h2>
+
+    <div class="grid md:grid-cols-4 gap-8">
+      <div class="reveal">
+        <p class="font-mono text-signalText text-sm mb-3">01</p>
+        <h3 class="font-display font-600 mb-2">Diagnóstico</h3>
+        <p class="text-inkSoft text-sm leading-relaxed">Conversamos sobre tu negocio y qué necesitas resolver. Sin costo, sin compromiso.</p>
+      </div>
+      <div class="reveal">
+        <p class="font-mono text-signalText text-sm mb-3">02</p>
+        <h3 class="font-display font-600 mb-2">Cotización</h3>
+        <p class="text-inkSoft text-sm leading-relaxed">Una propuesta clara: qué incluye, cuánto cuesta y cuánto tarda. Sin sorpresas después.</p>
+      </div>
+      <div class="reveal">
+        <p class="font-mono text-signalText text-sm mb-3">03</p>
+        <h3 class="font-display font-600 mb-2">Desarrollo</h3>
+        <p class="text-inkSoft text-sm leading-relaxed">Construimos tu proyecto y te mostramos avances reales en el camino, no solo al final.</p>
+      </div>
+      <div class="reveal">
+        <p class="font-mono text-signalText text-sm mb-3">04</p>
+        <h3 class="font-display font-600 mb-2">Entrega y soporte</h3>
+        <p class="text-inkSoft text-sm leading-relaxed">Publicamos tu sitio y quedamos disponibles 30 días para ajustes, sin costo adicional.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROYECTOS -->
+<section id="proyectos" class="py-24 px-6 md:px-10 bg-white/40">
+  <div class="max-w-6xl mx-auto">
+    <p class="eyebrow text-xs text-signalText mb-4 reveal">PROYECTOS</p>
+    <h2 class="font-display font-700 text-3xl md:text-4xl tracking-tight mb-4 max-w-xl reveal">
+      Todavía no tenemos clientes — así que somos honestos al respecto.
+    </h2>
+    <p class="text-inkSoft max-w-2xl mb-14 reveal">
+      NodoWeb es un estudio nuevo. En vez de inventar reseñas que no existen, aquí te mostramos dos proyectos de concepto que construimos para practicar el mismo proceso que usaríamos con un cliente real — desde el diseño hasta la automatización.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-6">
+
+      <a href="proyectos/cafe-raiz.html" target="_blank" rel="noopener" class="card-node rounded-2xl overflow-hidden bg-paper reveal block">
+        <div class="h-40 relative" style="background:#F6EFE4;">
+          <div class="absolute inset-0 flex flex-col justify-center px-6" style="background:linear-gradient(180deg, rgba(246,239,228,0) 0%, rgba(58,42,31,0.04) 100%);">
+            <p style="font-family: Georgia, serif; color:#3A2A1F; font-size:22px; font-weight:600;">Café Raíz</p>
+            <p style="color:#A65733; font-size:11px; letter-spacing:.08em; text-transform:uppercase; margin-top:4px;">Sitio informativo</p>
+            <div class="flex gap-1.5 mt-3">
+              <span class="w-4 h-4 rounded-full" style="background:#C1653B;"></span>
+              <span class="w-4 h-4 rounded-full" style="background:#D9A441;"></span>
+              <span class="w-4 h-4 rounded-full" style="background:#3A2A1F;"></span>
+            </div>
+          </div>
+        </div>
+        <div class="p-6">
+          <p class="eyebrow text-xs text-amberText mb-2">PROYECTO DE CONCEPTO</p>
+          <h3 class="font-display font-600 text-lg mb-2">Cafetería de barrio</h3>
+          <p class="text-inkSoft text-sm leading-relaxed mb-3">Sitio de una página: menú, ubicación y horario. Identidad cálida hecha a la medida del negocio, no una plantilla genérica.</p>
+          <span class="text-signalText text-sm font-semibold">Ver demo ↗</span>
+        </div>
+      </a>
+
+      <a href="proyectos/ferreteria-central.html" target="_blank" rel="noopener" class="card-node rounded-2xl overflow-hidden bg-paper reveal block">
+        <div class="h-40 relative" style="background:#1C2B36;">
+          <div class="absolute inset-0 flex flex-col justify-center px-6">
+            <p style="font-family: Arial, sans-serif; color:#E7ECEE; font-size:22px; font-weight:800; text-transform:uppercase;">Ferretería Central</p>
+            <p style="color:#F0B429; font-size:11px; letter-spacing:.08em; text-transform:uppercase; margin-top:4px;">Sitio + automatización</p>
+            <div class="flex gap-1.5 mt-3">
+              <span class="w-4 h-4 rounded-full" style="background:#2E7DAF;"></span>
+              <span class="w-4 h-4 rounded-full" style="background:#F0B429;"></span>
+              <span class="w-4 h-4 rounded-full" style="background:#E7ECEE;"></span>
+            </div>
+          </div>
+        </div>
+        <div class="p-6">
+          <p class="eyebrow text-xs text-amberText mb-2">PROYECTO DE CONCEPTO</p>
+          <h3 class="font-display font-600 text-lg mb-2">Ferretería con pedidos automáticos</h3>
+          <p class="text-inkSoft text-sm leading-relaxed mb-3">Catálogo por categorías más una demo de automatización de pedidos por WhatsApp — el mismo tipo de integración que ofrecemos como servicio.</p>
+          <span class="text-signalText text-sm font-semibold">Ver demo ↗</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section id="nosotros" class="py-24 px-6 md:px-10 bg-ink text-paper">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-center">
+    <div class="reveal">
+      <p class="eyebrow text-xs text-amber mb-4">NOSOTROS</p>
+      <h2 class="font-display font-700 text-3xl md:text-4xl tracking-tight mb-6">
+        Dos personas, no un call center.
+      </h2>
+      <p class="text-paper/80 leading-relaxed mb-4">
+        Detrás de NodoWeb no hay un equipo de ventas ni un chatbot repitiendo respuestas. Somos dos personas de Medellín que atendemos cada proyecto directamente — sabemos lo que es escribirle a un proveedor grande y quedar esperando días por una respuesta. Aquí no pasa eso.
+      </p>
+      <p class="text-paper/80 leading-relaxed">
+        Este mismo sitio es nuestro primer nodo: lo construimos con el mismo proceso y las mismas herramientas que le ofrecemos a cada cliente.
+      </p>
+    </div>
+    <div class="reveal">
+      <div class="border border-paper/20 rounded-2xl p-8">
+        <p class="font-mono text-xs text-signal mb-6">POR QUÉ NODOWEB</p>
+        <ul class="space-y-5 text-sm">
+          <li class="flex gap-3"><span class="text-amber">—</span> Atención directa con quien construye tu proyecto, no con un intermediario.</li>
+          <li class="flex gap-3"><span class="text-amber">—</span> Precios pensados para negocios pequeños de Medellín y Bello, no tarifas de agencia grande.</li>
+          <li class="flex gap-3"><span class="text-amber">—</span> Web y automatización bajo un mismo techo: no necesitas dos proveedores distintos.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="py-28 px-6 md:px-10">
+  <div class="max-w-3xl mx-auto text-center reveal">
+    <p class="eyebrow text-xs text-signalText mb-4">CONTACTO</p>
+    <h2 class="font-display font-700 text-3xl md:text-4xl tracking-tight mb-6">
+      Empecemos con una conversación, no con un contrato.
+    </h2>
+    <p class="text-inkSoft mb-10 max-w-lg mx-auto leading-relaxed">
+      Cuéntanos qué necesita tu negocio y te respondemos con una propuesta clara en menos de 48 horas.
+    </p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="https://wa.me/573002568908" target="_blank" rel="noopener" class="bg-signal text-white px-7 py-3 rounded-full font-semibold text-sm hover:opacity-90 transition-opacity">
+        Escríbenos por WhatsApp
+      </a>
+      <a href="mailto:thiagorestrepo93@gmail.com" class="border border-ink px-7 py-3 rounded-full font-semibold text-sm hover:border-signal hover:text-signalText transition-colors">
+        thiagorestrepo93@gmail.com
+      </a>
+    </div>
+  </div>
+
+  <div class="max-w-4xl mx-auto mt-16 reveal">
+    <div class="card-node rounded-2xl overflow-hidden bg-paper">
+      <div id="coverage-map" style="height:340px; width:100%;" role="region" aria-label="Mapa interactivo de la zona de cobertura de NodoWeb en Medellín y Bello, Antioquia"></div>
+      <div class="p-5 flex items-center justify-between flex-wrap gap-3">
+        <div>
+          <p class="font-display font-600 text-sm">Zona de cobertura</p>
+          <p class="text-inkSoft text-xs mt-0.5">Atendemos en persona en Medellín y Bello — el resto de Colombia, en remoto.</p>
+        </div>
+        <span class="eyebrow text-xs text-signalText">MEDELLÍN · BELLO</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="border-t border-paperDim py-8 px-6 md:px-10">
+  <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-inkSoft">
+    <p>NodoWeb · Medellín y Bello, Antioquia</p>
+    <p>© 2026 NodoWeb. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+  const coverageMap = L.map('coverage-map', {
+    scrollWheelZoom: false,
+    zoomControl: true,
+  }).setView([6.2830, -75.5680], 12);
+
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    maxZoom: 18,
+  }).addTo(coverageMap);
+
+  L.circle([6.2830, -75.5680], {
+    radius: 9000,
+    color: '#3AA6A0',
+    weight: 2,
+    fillColor: '#3AA6A0',
+    fillOpacity: 0.12,
+  }).addTo(coverageMap);
+
+  L.marker([6.3373, -75.5553]).addTo(coverageMap)
+    .bindPopup('Bello, Antioquia');
+  L.marker([6.2442, -75.5812]).addTo(coverageMap)
+    .bindPopup('Medellín (centro)');
+</script>
+
+<script>
+  document.body.classList.add('js-ready');
+
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+
+  function closeMenu() {
+    mobileMenu.classList.add('hidden');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Abrir menú');
+    iconOpen.classList.remove('hidden');
+    iconClose.classList.add('hidden');
+  }
+
+  menuToggle.addEventListener('click', () => {
+    const isOpen = !mobileMenu.classList.contains('hidden');
+    if (isOpen) {
+      closeMenu();
+    } else {
+      mobileMenu.classList.remove('hidden');
+      menuToggle.setAttribute('aria-expanded', 'true');
+      menuToggle.setAttribute('aria-label', 'Cerrar menú');
+      iconOpen.classList.add('hidden');
+      iconClose.classList.remove('hidden');
+    }
+  });
+
+  mobileMenu.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach((el) => io.observe(el));
+</script>
+
+</body>
+</html>
