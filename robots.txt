@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /proyectos/
 
-Sitemap: https://nodoweb.co/sitemap.xml
+Sitemap: https://sirthiagomaster.github.io/NodoWeb-Site/sitemap.xml

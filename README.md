@@ -43,9 +43,10 @@ lo natural es reemplazarlos por casos reales (con permiso del cliente) en la sec
   dentro de `index.html` si cambian las tarifas.
 - `favicon.svg` / `favicon-32.png` / `favicon-16.png` / `apple-touch-icon.png`: ícono del sitio.
 - `og-image.png`: imagen que se muestra al compartir el link (WhatsApp, Facebook, etc.).
-- Los meta tags de Open Graph usan `https://nodoweb.co/` como URL — actualízalos en el `<head>`
-  de `index.html` en cuanto el dominio esté activo, o la vista previa al compartir no funcionará
-  correctamente hasta entonces.
+- Los meta tags de Open Graph usan `https://sirthiagomaster.github.io/NodoWeb-Site/` (la URL real de
+  GitHub Pages). Si en el futuro compran el dominio `nodoweb.co` y lo conectan, hay que volver a
+  actualizar estas URLs en el `<head>` de `index.html`, en `robots.txt`, en `sitemap.xml` y en el
+  bloque de datos estructurados (JSON-LD).
 
 ## Contacto y mapa
 
