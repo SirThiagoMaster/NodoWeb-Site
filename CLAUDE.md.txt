@@ -1,0 +1,20 @@
+# Sobre este proyecto
+
+Sitio web de Nodo Web — mi negocio de automatización y desarrollo web
+(WhatsApp, sitios, herramientas internas para pequeños negocios en Medellín).
+
+Este es el sitio de la propia marca Nodo Web, no el de un cliente.
+Incluye un mapa de cobertura (Leaflet) mostrando la zona de servicio en Medellín.
+
+## Stack observado
+- HTML/CSS/JS plano (sin framework por ahora)
+- Leaflet para mapas
+- Sin backend todavía
+
+## Fase actual
+Diagnóstico únicamente. No modifiques archivos todavía.
+
+Cuando entres por primera vez a este proyecto en una sesión nueva, si te pido
+"diagnostica el proyecto", revisa: estructura de carpetas, archivos existentes,
+dependencias, cómo se ejecuta, y riesgos o mejoras evidentes — sin tocar nada
+hasta que yo confirme.
